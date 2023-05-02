@@ -35,13 +35,13 @@ public class Main {
                     System.out.println("Total a pagar: " + total);
                     System.out.println("Ingrese la cantidad recibida del cliente: ");
                     double recibido = scan.nextDouble();
-                    if (recibido<monto){
+                    if (recibido<total){
                         System.out.println("La cantidad de pago es menor que el monto.");
-                        System.out.println("Intente de nuevo.");
+                        System.out.println("Intentelo de nuevo.");
                     }else{
                     double cambio = recibido - total;
                     System.out.println("Cambio: " + cambio);
-                    totalVentas = (totalVentas + total) - cambio;
+                    totalVentas = (totalVentas + recibido) - cambio;
                     }
                     break;
                 case 2:

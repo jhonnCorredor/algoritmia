@@ -20,6 +20,7 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         double totalVentas = 0;
         int opcion = 0;
+        double cambio;
         while (2 != opcion) {
             System.out.println("Menu:");
             System.out.println("1. Registrar cliente.");
@@ -35,9 +36,16 @@ public class Main {
                     System.out.println("Total a pagar: " + total);
                     System.out.println("Ingrese la cantidad recibida del cliente: ");
                     double recibido = scan.nextDouble();
-                    double cambio = recibido - total;
+                    if (recibido<total){
+                        cambio=0;
+                        double deuda;
+                        deuda=total-recibido;
+                        System.out.println("El cliente queda con una deuda de: "+deuda);
+                    }else{
+                    cambio = recibido - total;
                     System.out.println("Cambio: " + cambio);
-                    totalVentas = (totalVentas + total) - cambio;
+                    }
+                    totalVentas = (totalVentas + recibido) - cambio;
                     break;
                 case 2:
                     System.out.println("El total de dinero en la caja es de: " + totalVentas);
